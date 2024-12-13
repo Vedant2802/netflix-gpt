@@ -92,3 +92,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - movie suggestion
 - background movie playing
 - Netflix gpt
+- Login Form
+- Sign up form
