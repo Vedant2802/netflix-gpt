@@ -94,3 +94,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Netflix gpt
 - Login Form
 - Sign up form
+- Form validation
+- useRef hook
+- Firebase Setup
+- production deployement
+- create signup user account
