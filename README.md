@@ -110,3 +110,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - embedded the youtube video
 - made it auto play and mute
 - make main container look awesome
+- Secondary component
