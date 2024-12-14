@@ -99,3 +99,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Firebase Setup
 - production deployement
 - create signup user account
+- bug fix pf signup browse path
+- bug fix of signup state update
+- unsubcscribed from the onAuthStateChanged callback
+- Add harcoded value to Constants file
+- custom hook for now playing movies
+- updated the store with the data
+- Fetch Data for trailer video
+- update store with traile video data
+- embedded the youtube video
+- made it auto play and mute
+- make main container look awesome

@@ -7,9 +7,10 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/Firebase";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { LOGIN_LOGO, PHOTO_URL } from "../constants/constants";
 
 const Login = () => {
   const [isSignIn, setIsSignInForm] = useState(true);
@@ -17,7 +18,7 @@ const Login = () => {
   const name = useRef(null);
   const password = useRef(null);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
   console.log("name", name);
 
@@ -46,7 +47,7 @@ const Login = () => {
           // navigate("/browse");
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://example.com/jane-q-user/profile.jpg",
+            photoURL: PHOTO_URL,
           })
             .then(() => {
               // Profile updated!
@@ -59,7 +60,7 @@ const Login = () => {
                   photo: photoURL,
                 })
               );
-              navigate("/browse");
+              // navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -83,7 +84,7 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log("signedIn", user);
-          navigate("/browse");
+          // navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -98,7 +99,7 @@ const Login = () => {
       <div className="absolute">
         <img
           // className="w-44 h-44 mx-auto"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/729ce5c2-d831-436a-8c9d-f38fea0b99b3/web/IN-en-20241209-TRIFECTA-perspective_4aef76eb-7d5b-4be0-93c0-5f67320fd878_large.jpg"
+          src={LOGIN_LOGO}
           alt="background"
         />
       </div>
