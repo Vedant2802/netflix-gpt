@@ -6,7 +6,7 @@ import { LOGIN_LOGO } from "../constants/constants";
 const GptSearchPage = () => {
   return (
     <div>
-      <div className="absolute -z-10">
+      <div className="fixed -z-10">
         <img
           // className="w-44 h-44 mx-auto"
           src={LOGIN_LOGO}

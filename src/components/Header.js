@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { auth } from "../utils/Firebase";
 import { useNavigate } from "react-router-dom";
 import { addUser, removeUser } from "../utils/userSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { SUPPORTED_LANGUAGES } from "../constants/constants";
 import { changeLanguage } from "../utils/configSlice";
@@ -15,6 +15,7 @@ const Header = () => {
   //onAuthenticationState change function
   // const [lang, setLang] = useState();
   // const currentLanguage = useSelector((store) => store.comfig.lang);
+  const showSearch = useSelector((store) => store.gpt.showGptSearch);
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -59,24 +60,26 @@ const Header = () => {
         alt="logo"
       />
       <div className="flex p-2">
-        <select
-          className="p-2 bg-gray-500 text-white m-2 rounded-lg"
-          onChange={onChangeHandler}
-        >
-          {/* <option value="en">English</option>
+        {showSearch && (
+          <select
+            className="p-2 bg-gray-500 text-white m-2 rounded-lg"
+            onChange={onChangeHandler}
+          >
+            {/* <option value="en">English</option>
           <option value="hindi">Hindi</option>
           <option value="spanish">Spanish</option> */}
-          {SUPPORTED_LANGUAGES.map((lang) => (
-            <option key={lang.identifier} value={lang.identifier}>
-              {lang.name}
-            </option>
-          ))}
-        </select>
+            {SUPPORTED_LANGUAGES.map((lang) => (
+              <option key={lang.identifier} value={lang.identifier}>
+                {lang.name}
+              </option>
+            ))}
+          </select>
+        )}
         <button
           className="py-2 px-4 m-2 bg-purple-500 rounded-lg text-white"
           onClick={handleGptSearchClick}
         >
-          GPT Search
+          {showSearch ? "Homepage" : "GPT Search"}
         </button>
         <img
           className="w-12 h-12 rounded-lg"
