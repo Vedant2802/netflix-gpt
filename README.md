@@ -111,3 +111,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - made it auto play and mute
 - make main container look awesome
 - Secondary component
+
+- Use with a VPN because tmdb website has been experiencing issues
